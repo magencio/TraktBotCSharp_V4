@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*/bin
+*/obj
+/.vs
+/TraktBot/Emulator.bot
+/TraktBot/appsettings.development.json

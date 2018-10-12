@@ -1,0 +1,73 @@
+{
+    "name": "traktbotcsharpv4",
+    "description": "",
+    "services": [
+        {
+            "type": "abs",
+            "name": "traktbotcsharpv4",
+            "id": "1",
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5d2a719b-411a-4f17-a6c4-0d0bd0e2fd37",
+            "resourceGroup": "TraktBotCSharpV4",
+            "serviceName": "traktbotcsharpv4",
+            "appId": "adab3207-bbad-41b0-9095-b33e1c55f9d3"
+        },
+        {
+            "type": "endpoint",
+            "id": "2",
+            "name": "development",
+            "endpoint": "http://localhost:3978/api/messages",
+            "appId": "adab3207-bbad-41b0-9095-b33e1c55f9d3",
+            "appPassword": "5hwf3O0+cKjdZZ/0fi5Ssg==!RKD3rnJb2ueUOPBOqtw/4P+1QdKfYU0f3RGHrM6qQKo="
+        },
+        {
+            "type": "endpoint",
+            "id": "3",
+            "name": "production",
+            "endpoint": "https://traktbotcsharpv4.azurewebsites.net/api/messages",
+            "appId": "adab3207-bbad-41b0-9095-b33e1c55f9d3",
+            "appPassword": "BpBbPtXzA9NVjoIUcKU9Ig==!4sf1UlZ+NYkjHPU5Gy3+TDtqE5MLx/BCSZWFR1dZEBE="
+        },
+        {
+            "type": "cosmosdb",
+            "id": "4",
+            "name": "botState",
+            "database": "botdb",
+            "collection": "botstate",
+            "endpoint": "https://traktbotcsharpv4db.documents.azure.com:443/",
+            "key": "RLvCFTOBq6VISmbmsaU/Og==!VVY06tRHNnqGMVvc8tMA2oOoH5lq5WnVNpRFMbpRJijMMhx2lsO3nDl+1TXo7eZRSCTUwGT0l9E3J+wBR3GP05LDIkV70BwseM3bL9cPRvegZxchi+2ST0GhJbvl2N04"
+        },
+        {
+            "type": "luis",
+            "id": "5",
+            "name": "TraktBot.EN",
+            "version": "0.1",
+            "appId": "440f91d8-39a9-41e8-ae5d-de42a9333297",
+            "authoringKey": "VjhIBLQu+5Y4UXu35jpWBA==!VB6CtGtM9VUL0cJ00JoOeNK4QtyP2TxJC3Qc9foCvNJYv0RpSbzyRzEEpbAGg3yI",
+            "subscriptionKey": "5q0OMUoRFP7Tgnf/7KDR4Q==!aD94gssxx04D5zFreHXAuYqc1d7K6jmDP8IPW2jYZ7fNoWlrvK7DldwbDWcdnLSM",
+            "region": "westus"
+        },
+        {
+            "type": "generic",
+            "id": "6",
+            "name": "traktTv",
+            "configuration": {
+                "clientId": "8OdWDB0F5SbPxjcZkYOAfA==!3Y1aSFfllOMK8Ldy8bVOQHwbFSPwWL1v7QBrYtnylyqECodLVSW5psYYGOABuMRpNdFq/PsyamulFI2uMy8ZSAgksPpPvHDo+7Ru8ZqzkH0=",
+                "clientSecret": "wlYkInmDlrlKIzhbZoNeuA==!iq52jYxxez0EfrlPcUWjk2dCXDITH+zE/VrYh2R2Arv297aN8MUOccaOoIzx9wkgbi758Lkc/gEJa9/k5XnxzwyU90hfsgj/zdG6NurZL+g="
+            }
+        },
+        {
+            "type": "appInsights",
+            "id": "7",
+            "instrumentationKey": "syA6u2NgCfZqUluK0rw1Zw==!EBRDpNnEUEi/epUQY0KUz0cR6UL6dzUJG55/dZbsX11bpGJAIqN0zM5JXxvNQyuB",
+            "applicationId": "8f57c7a3-da67-4b89-9a97-9e64550cb1bb",
+            "apiKeys": {},
+            "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+            "subscriptionId": "5d2a719b-411a-4f17-a6c4-0d0bd0e2fd37",
+            "resourceGroup": "TraktBotCSharpV4",
+            "serviceName": "traktbotcsharpv4wpmhh6"
+        }
+    ],
+    "padlock": "d6HZGMcvj+SzqIA9XjThdA==!n4H8JeTeUeejaMy/8rOlgkaWlgv3m20C+KTYcwl3AP3/kGoOTrNSq4xZYWjVR3q0",
+    "version": "2.0"
+}
