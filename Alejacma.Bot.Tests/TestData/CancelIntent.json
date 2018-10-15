@@ -1,0 +1,8 @@
+﻿{
+  "query": "cancel",
+  "topScoringIntent": {
+    "intent": "Cancel",
+    "score": 0.985668659
+  },
+  "entities": []
+}

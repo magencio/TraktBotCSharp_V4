@@ -211,7 +211,7 @@ namespace Alejacma.Bot.Dialogs
 
             // Do we know which waterfall to execute? Did we already finish executing current waterfall?
             RecognizerResult recognizerResult = null;
-            if (!steps.ContainsKey(currentSteps) || currentStepIndex >= steps[currentSteps].Count())
+            if (!steps.ContainsKey(currentSteps) || currentStepIndex > steps[currentSteps].Count())
             {
                 // If so, decide on the next waterfall to execute
                 recognizerResult = await recognizer.RecognizeAsync(dc.Context, cancellationToken).ConfigureAwait(false);

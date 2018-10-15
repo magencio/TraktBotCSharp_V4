@@ -1,0 +1,8 @@
+﻿{
+  "query": "help",
+  "topScoringIntent": {
+    "intent": "Help",
+    "score": 0.9817491
+  },
+  "entities": []
+}
