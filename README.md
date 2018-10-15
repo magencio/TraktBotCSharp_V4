@@ -2,7 +2,7 @@
 It has been developed with [ASP.NET Core 2](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.0) & [Azure Bot Service v4](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0). [Alejacma.Bot library](https://github.com/magencio/TraktBotCSharp_V4/tree/master/Alejacma.Bot) contains helper classes that simplify the development of bots with [Bot Builder SDK v4](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries).
 
 ## Architecture
-![Architecture](./architecture.png)
+![Architecture](./Architecture.png)
 
 ## Documentation, SDKs and Tools
 - [ASP.NET Core 2](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.0)
