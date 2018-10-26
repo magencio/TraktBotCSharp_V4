@@ -6,12 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.4.1" />
-    <PackageReference Include="Microsoft.Bot.Builder" Version="4.0.7" />
-    <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.0.7" />
-    <PackageReference Include="Microsoft.Bot.Builder.Azure" Version="4.0.7" />
-    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.0.7" />
-    <PackageReference Include="Microsoft.Bot.Configuration" Version="4.0.7" />
-    <PackageReference Include="Microsoft.Bot.Schema" Version="4.0.7" />
+    <PackageReference Include="Microsoft.Bot.Builder" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Builder.Azure" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Configuration" Version="4.0.8" />
+    <PackageReference Include="Microsoft.Bot.Schema" Version="4.0.8" />
   </ItemGroup>
 
 </Project>

@@ -38,9 +38,9 @@ namespace TraktBot.Dialogs
                 Matches(TraktBotNLP.IntentCancel, OnCancelAsync).
                 Default(OnAnythingElseAsync);
 
-        private async Task<DialogTurnResult> OnBeginAsync(WaterfallStepContext step, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> OnBeginAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            var options = step.Options as ChooseSeasonDialogOptions ?? throw new ArgumentException(nameof(step.Options));
+            var options = stepContext.Options as ChooseSeasonDialogOptions ?? throw new ArgumentException(nameof(stepContext.Options));
             var show = options.Show ?? throw new ArgumentNullException(nameof(options.Show));
 
             if ((options.RecognizerResult.GetEntityValue(TraktBotNLP.EntityEpisode) is string seasonAndEpisode
@@ -48,58 +48,58 @@ namespace TraktBot.Dialogs
                 || (options.RecognizerResult.GetEntityValue(TraktBotNLP.EntitySeasonNumber) is string season
                     && int.TryParse(season, out seasonNumber)))
             {
-                return await OnSeasonNumberAsync(step, seasonNumber, cancellationToken);
+                return await OnSeasonNumberAsync(stepContext, seasonNumber, cancellationToken);
             }
             else
             {
-                await step.Context.SendSuggestedActionsAsync(options.Question, suggestedActions, cancellationToken);
+                await stepContext.Context.SendSuggestedActionsAsync(options.Question, suggestedActions, cancellationToken);
                 return EndOfTurn;
             }
         }
 
-        private async Task<DialogTurnResult> OnHelpAsync(WaterfallStepContext step, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> OnHelpAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            var maxSeason = GetMaxSeasonNumber(GetShow(step));
-            await step.Context.SendSuggestedActionsAsync($"Enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
+            var maxSeason = GetMaxSeasonNumber(GetShow(stepContext));
+            await stepContext.Context.SendSuggestedActionsAsync($"Enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
             return EndOfTurn;
         }
 
-        private async Task<DialogTurnResult> OnCancelAsync(WaterfallStepContext step, CancellationToken cancellationToken)
-            => await step.EndDialogAsync(cancellationToken: cancellationToken);
+        private async Task<DialogTurnResult> OnCancelAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+            => await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
 
-        private async Task<DialogTurnResult> OnAnythingElseAsync(WaterfallStepContext step, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> OnAnythingElseAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            if (int.TryParse(step.Context.Activity.Text, out int seasonNumber))
+            if (int.TryParse(stepContext.Context.Activity.Text, out int seasonNumber))
             {
-                return await OnSeasonNumberAsync(step, seasonNumber, cancellationToken);
+                return await OnSeasonNumberAsync(stepContext, seasonNumber, cancellationToken);
             }
             else
             {
-                var maxSeason = GetMaxSeasonNumber(GetShow(step));
-                await step.Context.SendSuggestedActionsAsync($"Sorry, '{step.Context.Activity.Text}' is not a valid number. Please, enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
+                var maxSeason = GetMaxSeasonNumber(GetShow(stepContext));
+                await stepContext.Context.SendSuggestedActionsAsync($"Sorry, '{stepContext.Context.Activity.Text}' is not a valid number. Please, enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
                 return EndOfTurn;
             }
         }
 
-        private async Task<DialogTurnResult> OnSeasonNumberAsync(WaterfallStepContext step, int seasonNumber, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> OnSeasonNumberAsync(WaterfallStepContext stepContext, int seasonNumber, CancellationToken cancellationToken)
         {
-            var show = GetShow(step);
+            var show = GetShow(stepContext);
             var maxSeason = GetMaxSeasonNumber(show);
 
             if (seasonNumber > 0 && seasonNumber <= maxSeason)
             {
                 var season = GetSeason(show, seasonNumber);
-                return await step.EndDialogAsync(season, cancellationToken);
+                return await stepContext.EndDialogAsync(season, cancellationToken);
             }
             else
             {
-                await step.Context.SendSuggestedActionsAsync($"Sorry, season {seasonNumber} doesn't exist for that show. Please, enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
+                await stepContext.Context.SendSuggestedActionsAsync($"Sorry, season {seasonNumber} doesn't exist for that show. Please, enter a season number between 1 and {maxSeason}", suggestedActions, cancellationToken);
                 return EndOfTurn;
             }
         }
 
-        private Show GetShow(WaterfallStepContext step)
-            => (step.Options as ChooseSeasonDialogOptions).Show;
+        private Show GetShow(WaterfallStepContext stepContext)
+            => (stepContext.Options as ChooseSeasonDialogOptions).Show;
 
         private int GetMaxSeasonNumber(Show show)
             => show.Seasons[show.Seasons.Count - 1].Number;

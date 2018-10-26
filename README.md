@@ -6,7 +6,7 @@ It has been developed with [ASP.NET Core 2](https://docs.microsoft.com/en-us/asp
 
 ## Documentation, SDKs and Tools
 - [ASP.NET Core 2](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.0)
-- [Azure Bot Service v4](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0).
+- [Azure Bot Service v4](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0)
 - [.NET version of the Bot Builder SDK v4](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries)
 - [.NET Core samples of the Bot Builder SDK v4](https://github.com/Microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore)
 - [Bot Builder tools](https://github.com/Microsoft/botbuilder-tools)
@@ -34,4 +34,4 @@ OAuth Connection Settings for TraktTv in Azure Bot Service:
 
 ## TO DO
 - Track sentiment of messages in App Insights.
-- Add testing.
+- Add more testing.
