@@ -27,14 +27,14 @@ namespace Alejacma.Bot.Middleware
         /// <summary>
         /// Initializes a new instance of the <see cref="TelemetryLoggerMiddleware"/> class.
         /// </summary>
-        /// <param name="telemetry">The Application Insights client.</param>
+        /// <param name="telemetry">The telemetry client.</param>
         public TelemetryLoggerMiddleware(IBotTelemetry telemetry)
         {
             this.telemetry = telemetry ?? throw new ArgumentNullException(nameof(telemetry));
         }
 
         /// <summary>
-        /// Records incoming and outgoing activities to the Application Insights store.
+        /// Records incoming and outgoing activities to the telemetry service.
         /// </summary>
         /// <param name="context">The <see cref="ITurnContext"/> object for this turn.</param>
         /// <param name="nextTurn">The delegate to call to continue the bot middleware pipeline.</param>

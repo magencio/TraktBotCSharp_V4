@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace Alejacma.Bot.Telemetry
 {
     /// <summary>
-    /// Sends bot related events to Application Insights.
+    /// Sends bot related events to Application Insights, so that they can be consumed with Ibex Dashboard.
     /// </summary>
     public class BotTelemetry : IBotTelemetry
     {

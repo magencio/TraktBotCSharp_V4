@@ -53,7 +53,7 @@ namespace Alejacma.Bot.Dialogs
         /// If this waterfall doesn't exists, the dialog will run the recognizer against the current activity text
         /// to find a suitable intent handler.
         /// </summary>
-        /// <param name="step">The step execute.</param>
+        /// <param name="step">The step to execute.</param>
         /// <returns>This dialog.</returns>
         public IntentDialog Begin(WaterfallStep step)
             => Begin(new WaterfallStep[] { step ?? throw new ArgumentNullException(nameof(step)) });
@@ -84,7 +84,7 @@ namespace Alejacma.Bot.Dialogs
         /// Sets the waterfall to execute when an intent is matched.
         /// </summary>
         /// <param name="intent">The intent name.</param>
-        /// <param name="steps">The steps to execute.</param>
+        /// <param name="steps"></param>
         /// <returns>This dialog.</returns>
         public IntentDialog Matches(string intent, IEnumerable<WaterfallStep> steps)
         {
@@ -137,7 +137,7 @@ namespace Alejacma.Bot.Dialogs
         /// <summary>
         /// Method called when an instance of the dialog is the "current" dialog and the
         /// user replies with a new activity. The dialog will generally continue to receive the users
-        /// replies until it calls either `DialogSet.end()` or `DialogSet.begin()`.
+        /// replies until it calls either EndDialog or BeginDialog.
         /// </summary>
         /// <param name="dc">The dialog context for the current turn of conversation.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
@@ -163,7 +163,7 @@ namespace Alejacma.Bot.Dialogs
 
         /// <summary>
         /// Method called when an instance of the dialog is being returned to from another
-        /// dialog that was started by the current instance using `DialogSet.begin()`.
+        /// dialog that was started by the current instance using BeginDialog.
         /// Any result passed from the called dialog will be passed to the current dialogs parent.
         /// </summary>
         /// <param name="dc">The dialog context for the current turn of conversation.</param>
