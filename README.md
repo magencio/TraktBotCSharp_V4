@@ -1,6 +1,8 @@
 ﻿This sample demonstrates a bot to interact with [Trakt.tv](https://trakt.tv/) services. 
 It has been developed with [ASP.NET Core 2](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-2.0) & [Azure Bot Service v4](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0). [Alejacma.Bot library](https://github.com/magencio/TraktBotCSharp_V4/tree/master/Alejacma.Bot) contains helper classes that simplify the development of bots with [Bot Builder SDK v4](https://github.com/Microsoft/botbuilder-dotnet/tree/master/libraries).
 
+You can find a Node.js+TypeScript version of this sample here: [TraktBotNode_V4](https://github.com/magencio/TraktBotNode_V4).
+
 ## Architecture
 ![Architecture](./Architecture.png)
 
